@@ -1,0 +1,39 @@
+body {
+   background-image: url("./img/fondo.png");
+   text-align: center;
+   background-size: cover; 
+   background-repeat: no-repeat; 
+   background-position: center;
+}
+
+table {
+   text-align: center;
+   margin: auto;
+   border: solid rgb(172, 172, 172) 1px;
+   margin-bottom: 3px;
+   background-color: rgba(0, 0, 0, 0.7);
+   color: white;
+}
+
+th {
+   border: solid rgb(172, 172, 172) 1px;
+   padding: 3px;
+}
+td {
+   border: solid rgb(172, 172, 172) 1px;
+   padding: 3px;
+}
+.form{
+   border: solid black 2px;
+   padding: 3px;
+   width: 30%;
+   margin: auto;
+   text-align: center;
+   background-color: rgba(0, 0, 0, 0.7);
+   color: white;
+}
+input{
+   margin: 3px;
+   opacity: 20;
+}
+   

@@ -1,3 +1,6 @@
+<?PHP
+session_start();
+?>
 <HTML LANG="es">
 <HEAD>
    <link rel="stylesheet" href="style.css">
@@ -5,9 +8,9 @@
 
 <BODY>
 
-   <H1>Eliminar coche</H1>
+   <H1>Modificar usuario</H1>
    <div class="form">
-   <form action ='usuarios_borrar1.php' method="post">
+   <form action ='usuarios_modificar1.php' method="post">
       <label for="nombre">Nombre:</label>
       <input type="text" name="nombre" ><br>
 
@@ -23,7 +26,7 @@
       <label for="saldo">Saldo:</label>
       <input type="number" name="saldo"><br>
 
-      <input type="submit" value="buscar">
+      <input type="submit" value="modificar">
    </form>
    </div>
 </BODY>

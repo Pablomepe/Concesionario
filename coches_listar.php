@@ -1,3 +1,6 @@
+<?PHP
+session_start();
+?>
 <HTML LANG="es">
 <HEAD>
 <link rel="stylesheet" href="style.css">
@@ -48,8 +51,8 @@
             print ("<TD>" . $resultado['precio'] . "</TD>\n");
             print ("<TD>" . $alquilado . "</TD>\n");
             print ("<TD> <img src='" . $resultado['foto'] . "' width=80px></TD>\n");
-            
             print ("</TR>\n");
+
          }
 
          print ("</TABLE>\n");
@@ -62,7 +65,7 @@ mysqli_close ($conexion);
 
 ?>
 <br>
-      <form action ='index.html' method="post">
+      <form action ='index.php' method="post">
          <input type="submit" value="inicio">
       </form>
 

@@ -1,3 +1,6 @@
+<?PHP
+session_start();
+?>
 <HTML LANG="es">
 <HEAD>
    <link rel="stylesheet" href="style.css">
@@ -5,9 +8,9 @@
 
 <BODY>
 
-   <H1>Buscar coche</H1>
+   <H1>Modificar vehiculo</H1>
    <div class="form">
-   <form action ='coches_buscar2.php' method="post">
+   <form action ='coches_modificar1.php' method="post">
       <label for="modelo">Modelo:</label>
       <input type="text" name="modelo" ><br>
 

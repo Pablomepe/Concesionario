@@ -1,3 +1,8 @@
+<?PHP
+session_start();
+$tipo = $_SESSION['tipo'];
+if ($tipo = 1){
+?>
 <HTML LANG="es">
 <HEAD>
    <link rel="stylesheet" href="style.css">
@@ -28,4 +33,10 @@
    </div>
 </BODY>
 </HTML>
+<?PHP
+}
+else {
+   echo "No se cumple";
+}
+?>
  

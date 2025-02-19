@@ -1,3 +1,6 @@
+<?PHP
+session_start();
+?>
 <HTML LANG="es">
 <HEAD>
 <link rel="stylesheet" href="style.css">
@@ -28,6 +31,7 @@
          print ("<TH>apellido</TH>\n");
          print ("<TH>DNI</TH>\n");
          print ("<TH>Saldo</TH>\n");
+         print ("<TH>Tipo</TH>\n");
          print ("</TR>\n");
 
          for ($i=0; $i<$nfilas; $i++)
@@ -38,7 +42,7 @@
             print ("<TD>" . $resultado['apellidos'] . "</TD>\n");
             print ("<TD>" . $resultado['dni'] . "</TD>\n");
             print ("<TD>" . $resultado['saldo'] . "</TD>\n");
-            
+            print ("<TD>" . $resultado['tipo'] . "</TD>\n");
             print ("</TR>\n");
          }
 
@@ -52,7 +56,7 @@ mysqli_close ($conexion);
 
 ?>
 <br>
-      <form action ='index.html' method="post">
+      <form action ='index.php' method="post">
          <input type="submit" value="inicio">
       </form>
 

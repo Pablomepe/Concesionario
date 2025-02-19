@@ -1,3 +1,6 @@
+<?PHP
+session_start();
+?>
 <HTML LANG="es">
 <HEAD>
    <link rel="stylesheet" href="style.css">
@@ -22,6 +25,12 @@
 
       <label for="saldo">Saldo:</label>
       <input type="number" name="saldo"><br>
+
+      <label for="tipo">Tipo:</label>
+      <select name="tipo">
+         <option value="com">Comprador</option>
+         <option value="ven">Vendedor</option>
+      </select><br>
 
       <input type="submit" value="insertar">
    </form>

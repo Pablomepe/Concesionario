@@ -1,3 +1,6 @@
+<?PHP
+session_start();
+?>
 <HTML LANG="es">
    <HEAD>
       <link rel="stylesheet" href="style.css">
@@ -5,25 +8,24 @@
    
    <BODY>
    
-      <H1>Que desea hacer con los coches</H1>
-   
+      <H1>Que desea hacer con los usuarios</H1>
       <div class="form">
-      <form action ='index.html' method="post">
+      <form action ='index.php' method="post">
          <input type="submit" value="inicio">
       </form>
-      <form action ='coches_anadir.html' method="post">
+      <form action ='usuarios_anadir.php' method="post">
          <input type="submit" value="anadir">
       </form>
-      <form action ='coches_listar.php' method="post">
+      <form action ='usuarios_listar.php' method="post">
          <input type="submit" value="listar">
       </form>
-      <form action ='coches_buscar.html' method="post">
+      <form action ='usuarios_buscar.php' method="post">
          <input type="submit" value="buscar">
       </form>
-      <form action ='coches_modificar.html' method="post">
+      <form action ='usuarios_modificar.php' method="post">
          <input type="submit" value="modificar">
       </form>
-      <form action ='coches_borrar.html' method="post">
+      <form action ='usuarios_borrar.php' method="post">
          <input type="submit" value="borrar">
       </form>
       </div>

@@ -1,3 +1,6 @@
+<?PHP
+session_start();
+?>
 <HTML LANG="es">
 <HEAD>
 <link rel="stylesheet" href="style.css">
@@ -54,7 +57,7 @@ mysqli_close ($conexion);
 
 ?>
 <br>
-      <form action ='index.html' method="post">
+      <form action ='index.php' method="post">
          <input type="submit" value="inicio">
       </form>
 

@@ -1,3 +1,6 @@
+<?PHP
+session_start();
+?>
 <HTML LANG="es">
 <HEAD>
 <link rel="stylesheet" href="style.css">
@@ -15,10 +18,12 @@
    $apellido = trim(strip_tags($_REQUEST['apellido']));
    $DNI = trim(strip_tags($_REQUEST['DNI']));
    $saldo = trim(strip_tags($_REQUEST['saldo']));
+   $tipo = trim(strip_tags($_REQUEST['tipo']));
+
    
 
    // Enviar consulta
-      $instruccion = "insert into Usuarios (password, nombre, apellidos, dni, saldo) values ('$password', '$nombre', '$apellido', '$DNI', '$saldo')";
+      $instruccion = "insert into Usuarios (password, nombre, apellidos, dni, saldo, tipo) values ('$password', '$nombre', '$apellido', '$DNI', '$saldo', '$tipo')";
       
       if (mysqli_query ($conexion,$instruccion)) {
          echo "<h1>Usuario insertado con exito</h1>";
@@ -32,7 +37,7 @@
 mysqli_close ($conexion);
 
 ?>
-      <form action ='index.html' method="post">
+      <form action ='index.php' method="post">
          <input type="submit" value="inicio">
       </form>
 </BODY>

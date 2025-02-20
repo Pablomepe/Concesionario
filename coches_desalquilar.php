@@ -1,6 +1,5 @@
 <?PHP
 session_start();
-
 ?>
 <HTML LANG="es">
 <HEAD>
@@ -10,8 +9,10 @@ session_start();
 
 <BODY>
 
+<H1>Lista de coches</H1>
+
 <?PHP
-if (isset($_SESSION['nombre'])){
+
    // Conectar con el servidor de base de datos
       $conexion = mysqli_connect ("localhost", "root", "rootroot", "concesionario")
          or die ("No se puede conectar con el servidor");
@@ -34,25 +35,13 @@ if (isset($_SESSION['nombre'])){
         print ("<TD rowspan='2'> <img src='" . $resultado['foto'] . "' width=250px></TD>\n");
         print ("</TR>\n");
         print ("<TR>\n");
-        print ("<td>Estas seguro que lo quieres alquilar <form action ='coches_alquilar1.php' method='post'> <input type='hidden' name='id' value='".$resultado['id_coche']."'>");
-            print ("<input type='submit' value='Alquilar'></form></td>");
+        print ("<td>Estas seguro que lo quieres devolver <form action ='coches_desalquilar1.php' method='post'> <input type='hidden' name='id' value='".$resultado['id_coche']."'>");
+            print ("<input type='submit' value='Devolver'></form></td>");
         print ("</TR>\n");
         print ("</TABLE>\n");
 // Cerrar 
 mysqli_close ($conexion);
-}
-else{
-?>
-<table>
-   <tr>
-      <td>
-         <h1>¡¡ Necesitas iniciar sesion para poder alquilar un coche !!</h1>
-      </td>
-   </tr>
-</table>
-<?php
-}
-?>
 
+?>
 </BODY>
 </HTML>

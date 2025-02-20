@@ -3,6 +3,8 @@ session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Concesionario</title>
+  <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -36,13 +38,13 @@ session_start();?>
             print('<div class="dropdown text-end">
             
           <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            <img src="./img/persona.png" alt="mdo" width="32" height="32" class="rounded-circle">
           </a>
           
           <ul class="dropdown-menu text-small">
             <li><a class="dropdown-item" href="#">Hi, '.$_SESSION["nombre"].'</a></li>
             <li><a class="dropdown-item" href="usuarios_modificar2_1.php">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="usuarios_perfil.php">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="usuarios_cerrar.php">Sign out</a></li>
           </ul>

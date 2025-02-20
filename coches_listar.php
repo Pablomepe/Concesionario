@@ -71,10 +71,7 @@ session_start();
 mysqli_close ($conexion);
 
 ?>
-<br>
-      <form action ='index.php' method="post">
-         <input type="submit" value="inicio">
-      </form>
+
 
 </BODY>
 </HTML>

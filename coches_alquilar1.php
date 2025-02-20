@@ -57,6 +57,11 @@ session_start();
          $instruccion6 = "UPDATE coches SET alquilado = '1' WHERE id_coche = '$id'";
          $consulta6 = mysqli_query ($conexion,$instruccion6)
             or die ("Fallo en la consulta 6");
+
+         $instruccion7 = "INSERT INTO alquileres (id_usuario, id_coche, prestado) VALUES ('$id_com', '$id', now())";
+         $consulta7 = mysqli_query ($conexion,$instruccion7)
+            or die ("Fallo en la consulta 7");
+         header('location: coches_listar.php');
       }
       else { 
          print("No dispone de suficiente saldo");

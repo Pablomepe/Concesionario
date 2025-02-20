@@ -13,32 +13,40 @@ session_start();
       $conexion = mysqli_connect ("localhost", "root", "rootroot","concesionario")
          or die ("No se puede conectar con el servidor");
 		
-   $password = trim(strip_tags(MD5($_REQUEST['password'])));
+   $pass = trim(strip_tags($_REQUEST['password']));
+   
    $email = trim(strip_tags($_REQUEST['email']));
    
 
    
 
    // Enviar consulta
-      $instruccion = "select * from Usuarios where email='$email' and password='$password'";
+      $instruccion = "select * from Usuarios where email='$email'";
       $consulta = mysqli_query ($conexion,$instruccion);
       if (mysqli_num_rows($consulta) == 1){
          $resultado = mysqli_fetch_array ($consulta);
-         $_SESSION['nombre']=$resultado['nombre'];
-         if ($resultado['tipo']=="adm"){
-         $_SESSION['tipo']=1;
+         if (password_verify($pass, $resultado['password'])) {
+            $_SESSION['nombre']=$resultado['nombre'];
+            $_SESSION['id']=$resultado['id_usuario'];
+            if ($resultado['tipo']=="adm"){
+            $_SESSION['tipo']=1;
+            }
+            elseif ($resultado['tipo']=="com"){
+               $_SESSION['tipo']=2;
+            }
+            elseif ($resultado['tipo']=="ven"){
+               $_SESSION['tipo']=3;
+            }
+            header('location: index.php');
          }
-         elseif ($resultado['tipo']=="com"){
-            $_SESSION['tipo']=2;
+         else{
+            echo "Error al iniciar session";
          }
-         elseif ($resultado['tipo']=="ven"){
-            $_SESSION['tipo']=3;
-         }
-         header('location: index.php');
-      }
-      else{
+   }
+   else{
          echo "Error al iniciar session";
-      }
+   }
+
       
 
 // Cerrar 

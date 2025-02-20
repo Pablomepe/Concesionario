@@ -17,8 +17,9 @@ session_start();
    $marca = trim(strip_tags($_REQUEST['marca']));
    $color = trim(strip_tags($_REQUEST['color']));
    $precio = trim(strip_tags($_REQUEST['precio']));
-   $alquilado = trim(strip_tags($_REQUEST['alquilado']));
+   $alquilado = 0;
    $target_dir = "./img/";
+   $dueno = $_SESSION['id'];
 
    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
       $file = $_FILES['image'];
@@ -47,7 +48,7 @@ session_start();
   }
 
    // Enviar consulta
-      $instruccion = "insert into Coches (modelo, marca, color, precio, alquilado, foto) values ('$modelo', '$marca', '$color', '$precio', '$alquilado', '$target_file')";
+      $instruccion = "insert into Coches (modelo, marca, color, precio, alquilado, foto, id_dueno) values ('$modelo', '$marca', '$color', '$precio', '$alquilado', '$target_file', '$dueno')";
    
       if (mysqli_query ($conexion,$instruccion)) {
          echo "<h1>Coche insertado con exito</h1>";

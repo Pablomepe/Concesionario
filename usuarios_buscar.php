@@ -19,9 +19,6 @@ else{
       <label for="nombre">Nombre:</label>
       <input type="text" name="nombre" ><br>
 
-      <label for="password">contraseña:</label>
-      <input type="password" name="password" ><br>
-
       <label for="apellido">Apellido:</label>
       <input type="text" name="apellido" ><br>
 

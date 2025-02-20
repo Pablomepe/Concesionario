@@ -34,12 +34,14 @@ session_start();?>
 
           if (isset($_SESSION["nombre"])){
             print('<div class="dropdown text-end">
+            
           <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
           </a>
+          
           <ul class="dropdown-menu text-small">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Hi, '.$_SESSION["nombre"].'</a></li>
+            <li><a class="dropdown-item" href="usuarios_modificar2_1.php">Settings</a></li>
             <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="usuarios_cerrar.php">Sign out</a></li>

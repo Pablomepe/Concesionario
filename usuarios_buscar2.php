@@ -14,14 +14,13 @@ session_start();
       $conexion = mysqli_connect ("localhost", "root", "rootroot","concesionario")
          or die ("No se puede conectar con el servidor");
 		
-   $password = trim(strip_tags(MD5($_REQUEST['password'])));
    $nombre = trim(strip_tags($_REQUEST['nombre']));
    $apellido = trim(strip_tags($_REQUEST['apellido']));
    $DNI = trim(strip_tags($_REQUEST['DNI']));
    $saldo = trim(strip_tags($_REQUEST['saldo']));
 
    // Enviar consulta
-      $instruccion = "select * from Usuarios where password ='$password' or nombre ='$nombre' or apellidos='$apellido' or dni='$DNI' or saldo='$saldo';";
+      $instruccion = "select * from Usuarios where nombre ='$nombre' or apellidos='$apellido' or dni='$DNI' or saldo='$saldo';";
    
       $consulta = mysqli_query ($conexion,$instruccion)
          or die ("Fallo en la consulta");

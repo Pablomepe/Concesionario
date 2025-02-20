@@ -25,12 +25,6 @@ session_start();
       <label for="precio">Precio:</label>
       <input type="number" name="precio" required><br>
 
-      <label for="alquilado">Alquilado:</label>
-      <select name="alquilado">
-         <option value="1">si</option>
-         <option value="0">No</option>
-      </select><br>
-
       <label for="imagen">Imagen:</label>
       <input type="file" name="image" accept="image/*"><br><br>
 

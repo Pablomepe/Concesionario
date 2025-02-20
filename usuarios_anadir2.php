@@ -13,7 +13,8 @@ session_start();
       $conexion = mysqli_connect ("localhost", "root", "rootroot","concesionario")
          or die ("No se puede conectar con el servidor");
 		
-   $password = trim(strip_tags(MD5($_REQUEST['password'])));
+   $pass = trim(strip_tags($_REQUEST['password']));
+   $password = password_hash($pass, PASSWORD_DEFAULT);
    $nombre = trim(strip_tags($_REQUEST['nombre']));
    $apellido = trim(strip_tags($_REQUEST['apellido']));
    $DNI = trim(strip_tags($_REQUEST['DNI']));
@@ -36,10 +37,9 @@ session_start();
 
 // Cerrar 
 mysqli_close ($conexion);
+header('location: usuarios_anadir.php');
 
 ?>
-      <form action ='index.php' method="post">
-         <input type="submit" value="inicio">
-      </form>
+      
 </BODY>
 </HTML>

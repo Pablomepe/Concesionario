@@ -36,6 +36,7 @@ else{
       $nfilas = mysqli_num_rows ($consulta);
       if ($nfilas > 0)
       {
+         print ("<div class='form'>");
          print ("<form action ='usuarios_borrar2.php' method='post'>");
          print ("<TABLE>\n");
          print ("<TR>\n");
@@ -60,7 +61,7 @@ else{
          }
          
          print ("</TABLE>\n");
-         print ("<input type='submit' value='borrar'></form>");
+         print ("<input type='submit' value='borrar'></form></div>");
       }
       else {
          print ("No hay usuarios que coincidan");
@@ -74,6 +75,6 @@ mysqli_close ($conexion);
 
 </BODY>
 </HTML>
-<?php
+<?php 
 }
 ?>

@@ -33,12 +33,32 @@ session_start();
       <?php  
             if ($_SESSION['tipo']==1 || $_SESSION['tipo']==3){
           ?>
-      <form action ='coches_modificar.php' method="post">
-         <input type="submit" value="modificar">
-      </form>
-      <form action ='coches_borrar.php' method="post">
-         <input type="submit" value="borrar">
-      </form>
+          <?php  
+            if ( $_SESSION['tipo']==3) {
+          ?>
+            <form action ='coches_modificar2_1.php' method="post">
+            <input type="submit" value="modificar">
+            </form>
+            <form action ='coches_borrar1_1.php' method="post">
+            <input type="submit" value="borrar">
+            </form>
+          <?php
+            }
+            else {
+          ?>
+            <form action ='coches_modificar.php' method="post">
+            <input type="submit" value="modificar mis coches">
+            </form>
+            <form action ='coches_borrar.php' method="post">
+            <input type="submit" value="borrar mis coches">
+            </form>
+           
+          <?php
+            }
+          ?>
+         
+
+      
       <?php
             }
       ?>

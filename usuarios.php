@@ -4,6 +4,7 @@ session_start();
 <HTML LANG="es">
    <HEAD>
       <link rel="stylesheet" href="style.css">
+      <?php include 'header.php'; ?>
    </HEAD>
    
    <BODY>
@@ -15,6 +16,9 @@ session_start();
       </form>
       <form action ='usuarios_anadir.php' method="post">
          <input type="submit" value="anadir">
+      </form>
+      <form action ='usuarios_iniciar.php' method="post">
+         <input type="submit" value="iniciar sesion">
       </form>
       <form action ='usuarios_listar.php' method="post">
          <input type="submit" value="listar">

@@ -14,23 +14,30 @@ session_start();
          or die ("No se puede conectar con el servidor");
 		
    $password = trim(strip_tags(MD5($_REQUEST['password'])));
-   $nombre = trim(strip_tags($_REQUEST['nombre']));
-   $apellido = trim(strip_tags($_REQUEST['apellido']));
-   $DNI = trim(strip_tags($_REQUEST['DNI']));
-   $saldo = trim(strip_tags($_REQUEST['saldo']));
    $email = trim(strip_tags($_REQUEST['email']));
-   $tipo = trim(strip_tags($_REQUEST['tipo']));
+   
 
    
 
    // Enviar consulta
-      $instruccion = "insert into Usuarios (email, password, nombre, apellidos, dni, saldo, tipo) values ('$email', '$password', '$nombre', '$apellido', '$DNI', '$saldo', '$tipo')";
-      
-      if (mysqli_query ($conexion,$instruccion)) {
-         echo "<h1>Usuario insertado con exito</h1>";
+      $instruccion = "select * from Usuarios where email='$email' and password='$password'";
+      $consulta = mysqli_query ($conexion,$instruccion);
+      if (mysqli_num_rows($consulta) == 1){
+         $resultado = mysqli_fetch_array ($consulta);
+         $_SESSION['nombre']=$resultado['nombre'];
+         if ($resultado['tipo']=="adm"){
+         $_SESSION['tipo']=1;
+         }
+         elseif ($resultado['tipo']=="com"){
+            $_SESSION['tipo']=2;
+         }
+         elseif ($resultado['tipo']=="ven"){
+            $_SESSION['tipo']=3;
+         }
+         header('location: index.php');
       }
       else{
-         echo "Error al insertar Usuario" . mysqli_error($conexion);
+         echo "Error al iniciar session";
       }
       
 

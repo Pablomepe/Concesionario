@@ -4,6 +4,7 @@ session_start();
 <HTML LANG="es">
 <HEAD>
    <link rel="stylesheet" href="style.css">
+   <?php include 'header.php'; ?>
 </HEAD>
 
 <BODY>
@@ -22,6 +23,9 @@ session_start();
 
       <label for="DNI">DNI:</label>
       <input type="text" name="DNI" required><br>
+
+      <label for="email">Email:</label>
+      <input type="text" name="email" required><br>
 
       <label for="saldo">Saldo:</label>
       <input type="number" name="saldo"><br>

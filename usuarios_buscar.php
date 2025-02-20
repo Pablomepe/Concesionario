@@ -1,7 +1,9 @@
 <?PHP
 session_start();
-$tipo = $_SESSION['tipo'];
-if ($tipo = 1){
+if ($_SESSION['tipo']!=1 ){
+   header('location: usuarios_sin_permisos.php');
+}
+else{
 ?>
 <HTML LANG="es">
 <HEAD>
@@ -36,8 +38,6 @@ if ($tipo = 1){
 </HTML>
 <?PHP
 }
-else {
-   echo "No se cumple";
-}
+
 ?>
  

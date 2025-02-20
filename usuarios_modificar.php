@@ -1,5 +1,9 @@
 <?PHP
 session_start();
+if ($_SESSION['tipo']!=1 ){
+   header('location: usuarios_sin_permisos.php');
+}
+else{
 ?>
 <HTML LANG="es">
 <HEAD>
@@ -32,4 +36,6 @@ session_start();
    </div>
 </BODY>
 </HTML>
- 
+<?php
+}
+?>

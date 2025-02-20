@@ -18,9 +18,14 @@ session_start();?>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="index.php" class="nav-link px-2 text-secondary">Home</a></li>
           <li><a href="coches.php" class="nav-link px-2 text-white">Coches</a></li>
+          <?php  
+            if ($_SESSION['tipo']==1){
+          ?>
           <li><a href="usuarios.php" class="nav-link px-2 text-white">Usuarios</a></li>
           <li><a href="alquileres.php" class="nav-link px-2 text-white">alquileres</a></li>
-          
+          <?php
+            }
+          ?>
         </ul>
 
         <div class="text-end">

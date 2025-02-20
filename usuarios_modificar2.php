@@ -1,5 +1,9 @@
 <?PHP
 session_start();
+if ($_SESSION['tipo']!=1 ){
+    header('location: usuarios_sin_permisos.php');
+ }
+ else{
 ?>
 <HTML LANG="es">
 <HEAD>
@@ -59,4 +63,5 @@ if (mysqli_num_rows ($consulta) == 1 ){
 
 // Cerrar la conexión
 mysqli_close($conn);
+ }
 ?>

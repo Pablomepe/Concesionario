@@ -37,6 +37,7 @@ session_start();
          print ("<TH>Precio</TH>\n");
          print ("<TH>alquilado</TH>\n");
          print ("<TH>imagen</TH>\n");
+         print ("<TH>estado</TH>\n");
          print ("</TR>\n");
 
          for ($i=0; $i<$nfilas; $i++)
@@ -55,7 +56,8 @@ session_start();
             print ("<TD>" . $resultado['precio'] . "</TD>\n");
             print ("<TD>" . $alquilado . "</TD>\n");
             print ("<TD><img src='" . $resultado['foto'] . "' width=80px></TD>\n");
-            
+            print ("<TD><form action ='coches_alquilar.php' method='post'> <input type='hidden' name='id' value='".$resultado['id_coche']."'>");
+            print ("<input type='submit' value='Alquilar'></form></TD>");
             print ("</TR>\n");
          }
 
@@ -70,9 +72,5 @@ session_start();
 mysqli_close ($conexion);
 
 ?>
-      <form action ='index.php' method="post">
-         <input type="submit" value="inicio">
-      </form>
-
 </BODY>
 </HTML>

@@ -31,7 +31,7 @@ session_start();
          <option value="0">No</option>
       </select><br>
 
-      <input type="submit" value="insertar">
+      <input type="submit" value="Buscar">
    </form>
    </div>
 </BODY>

@@ -28,7 +28,7 @@ session_start();
       $nfilas = mysqli_num_rows ($consulta);
       if ($nfilas > 0)
       {
-         print ("<form action ='coches_modificar2.php' method='post'>");
+         
          print ("<TABLE>\n");
          print ("<TR>\n");
          print ("<TH>Modelo</TH>\n");
@@ -56,12 +56,13 @@ session_start();
             print ("<TD>" . $resultado['precio'] . "</TD>\n");
             print ("<TD>" . $alquilado . "</TD>\n");
             print ("<TD><img src='" . $resultado['foto'] . "' width=80px></TD>\n");
-            print ("<TD><input type='radio' name='id' value='".$resultado['id_coche']."' ></TD>");
+            print ("<TD><form action ='coches_modificar2.php' method='post'> <input type='hidden' name='id' value='".$resultado['id_coche']."'>");
+            print ("<input type='submit' value='Modificar'></form></TD>");
             print ("</TR>\n");
          }
          
          print ("</TABLE>\n");
-         print ("<input type='submit' value='modificar'></form>");
+         
       }
       else {
          print ("No hay coches que coincidan");

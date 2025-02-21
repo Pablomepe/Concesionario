@@ -11,8 +11,25 @@ if (isset($_SESSION['nombre'])){
 </head>
 <body>
 <?php
-    print("<h1> Hola, ". $_SESSION['nombre']."</h1>")
+    print("<main class='container'><div class='bg-body-tertiary p-5 m-5 rounded'>
+    <h1> Hola, ". $_SESSION['nombre']."</h1></div></main>")
 ?>
+<main class="container" >
+  <div class="bg-body-tertiary p-5 rounded">
+    <h1 style="text-align: left">Mi Saldo</h1>
+    <hr>
+    <?php
+    $conexion = mysqli_connect ("localhost", "root", "rootroot","concesionario")
+    or die ("No se puede conectar con el servidor");
+    $id = $_SESSION['id'];
+    $instruccion = "select * from usuarios where id_usuario='$id';";
+    $consulta = mysqli_query ($conexion,$instruccion)
+      or die ("Fallo en la consulta");
+      $resultado = mysqli_fetch_array ($consulta);
+  print("<h1>".$resultado['saldo']."€</h1>")
+    ?>
+  </div>
+</main>
 <main class="container" >
   <div class="bg-body-tertiary p-5 rounded">
     <h1 style="text-align: left">Mis Coches</h1>

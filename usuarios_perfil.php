@@ -15,7 +15,7 @@ if (isset($_SESSION['nombre'])){
     <h1> Hola, ". $_SESSION['nombre']."</h1></div></main>")
 ?>
 <main class="container" >
-  <div class="bg-body-tertiary p-5 rounded">
+  <div class="bg-body-tertiary p-5 m-1 rounded">
     <h1 style="text-align: left">Mi Saldo</h1>
     <hr>
     <?php
@@ -31,7 +31,7 @@ if (isset($_SESSION['nombre'])){
   </div>
 </main>
 <main class="container" >
-  <div class="bg-body-tertiary p-5 rounded">
+  <div class="bg-body-tertiary p-5 m-1 rounded">
     <h1 style="text-align: left">Mis Coches</h1>
     <hr>
     <?php

@@ -17,6 +17,7 @@ if (isset($_SESSION['nombre'])){
          or die ("No se puede conectar con el servidor");
 
          $id = $_REQUEST['id'];
+         $id_com = $_SESSION['id'];
 
 		 
 
@@ -27,6 +28,12 @@ if (isset($_SESSION['nombre'])){
    // Mostrar resultados de la consulta
       $nfilas = mysqli_num_rows ($consulta);
         $resultado = mysqli_fetch_array ($consulta);
+        if ($id_com==$resultado['id_dueno']){
+         print ("<div class='form' style='background-color: white; margin-top:20px; border-radius: 20px;'>
+            <H1 style='color: red;'>¡¡No puedes alquilar un coche tuyo!!</H1>
+         </div>");
+        }
+        else{
         print ("<TABLE>\n");
         print ("<TR>\n");
         print ("<td>El coche ". $resultado['modelo'] ." de la marca ". $resultado['marca'] ." en color ". $resultado['color'] ." esta disponible para alquilarlo por ". $resultado['precio'] ." €</td>");
@@ -38,6 +45,7 @@ if (isset($_SESSION['nombre'])){
             print ("<input type='submit' value='Alquilar'></form></td>");
         print ("</TR>\n");
         print ("</TABLE>\n");
+        }
 // Cerrar 
 mysqli_close ($conexion);
 }
